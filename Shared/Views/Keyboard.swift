@@ -17,30 +17,20 @@ struct Keyboard: View {
       ForEach(Keyboard.rows, id: \.self) { row in
         HStack(spacing: horizontalSpacing) {
           ForEach(row) { key in
-            keyboardKey(key) {
+            let keyView = KeyboardKey(key: key) {
               game.keyboardDidPress(key)
+            }
+
+            if case let .letter(letter) = key,
+                let result = game.lettersUsed[letter] {
+              keyView
+                .keyStyle(.revealedLetter(result))
+            } else {
+              keyView
             }
           }
         }
       }
-    }
-  }
-
-  @ViewBuilder
-  private func keyboardKey(
-    _ key: Key,
-    onPress: @escaping () -> Void
-  ) -> some View {
-    if case let .letter(letter) = key {
-      KeyboardKey(
-        key: key,
-        state: game.lettersUsed[letter] == nil ?
-          .unused :
-          .used(game.lettersUsed[letter]!),
-        action: onPress
-      )
-    } else {
-      KeyboardKey(key: key, state: .unused, action: onPress)
     }
   }
 }
