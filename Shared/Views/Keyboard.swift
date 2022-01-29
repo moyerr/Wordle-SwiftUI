@@ -30,7 +30,7 @@ struct Keyboard: View {
             if case let .letter(letter) = key {
               KeyboardKey(
                 key: key,
-                state: game.cumulativeResults[letter] == nil ? .unused : .used(game.cumulativeResults[letter]!)
+                state: game.lettersUsed[letter] == nil ? .unused : .used(game.lettersUsed[letter]!)
               ) {
                 game.keyboardDidPress(key)
               }

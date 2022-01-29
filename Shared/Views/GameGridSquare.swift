@@ -7,35 +7,6 @@
 
 import SwiftUI
 
-struct GameGrid {
-  var rows: [GameRow]
-}
-
-struct GameRow: Hashable {
-  let row: Int
-  var squares: [GameSquare]
-}
-
-struct GameSquare: Hashable {
-  let position: Int
-  var letter: Letter?
-  var result: LetterGuessResult?
-
-  init(
-    position: Int = 0,
-    letter: Letter?,
-    result: LetterGuessResult?
-  ) {
-    self.position = position
-    self.letter = letter
-    self.result = result
-  }
-
-  static func empty(at position: Int) -> GameSquare {
-    .init(position: position, letter: nil, result: nil)
-  }
-}
-
 struct GameGridSquare: View {
   let square: GameSquare
 
@@ -46,7 +17,7 @@ struct GameGridSquare: View {
           square.letter == nil ? Color.emptySquareBorder : Color.filledSquareBorder,
           lineWidth: square.result == nil ? 3 : 0
         )
-      Text(square.letter?.displayValue ?? "")
+      Text(square.letter?.displayValue ?? " ")
         .foregroundColor(
           square.result == nil ? .primary : .white
         )
@@ -56,7 +27,6 @@ struct GameGridSquare: View {
     }
     .background(backgroundColor)
     .aspectRatio(1, contentMode: .fit)
-    .frame(maxWidth: 80)
   }
   
   private var backgroundColor: Color {
@@ -76,6 +46,6 @@ struct GameGridSquare: View {
 struct GameGridSquare_Previews: PreviewProvider {
   static var previews: some View {
     GameGridSquare(square: GameSquare(letter: .w, result: .notInWord))
-      .withPreviewTraits(layout: .fixed(width: 100, height: 100))
+      .withPreviewTraits(layout: .fixed(width: 150, height: 150))
   }
 }

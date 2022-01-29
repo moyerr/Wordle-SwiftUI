@@ -13,9 +13,8 @@ struct GameView: View {
   var body: some View {
     VStack {
       Spacer()
-      GameGridView(
-        grid: game.gameGrid
-      )
+      GameGridView(grid: game.grid)
+      Spacer()
       Keyboard(game: game)
     }
     .padding()
@@ -25,7 +24,7 @@ struct GameView: View {
 struct ContentView_Previews: PreviewProvider {
   static var previews: some View {
     GameView(game: WordleGame())
-      .previewDevice("iPad mini (6th generation)")
+      .previewInterfaceOrientation(.landscapeRight)
   }
 }
 

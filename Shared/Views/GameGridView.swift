@@ -12,7 +12,7 @@ struct GameGridView: View {
 
   var body: some View {
     VStack {
-      ForEach(grid.rows, id: \.self) { row in
+      ForEach(grid.rows, id: \.row) { row in
         GameGridRow(row: row)
       }
     }
