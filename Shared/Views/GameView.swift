@@ -11,19 +11,23 @@ struct GameView: View {
   @ObservedObject var game: WordleGame
 
   var body: some View {
-    VStack {
+    HStack {
       Spacer()
-      GameGridView(grid: game.grid)
+      VStack {
+        Spacer()
+        GameGridView(grid: game.grid)
+        Spacer()
+        Keyboard(game: game)
+      }
       Spacer()
-      Keyboard(game: game)
     }
-    .padding()
   }
 }
 
 struct ContentView_Previews: PreviewProvider {
   static var previews: some View {
     GameView(game: WordleGame())
-      .previewInterfaceOrientation(.landscapeRight)
+      .previewDevice("iPad mini (6th generation)")
+.previewInterfaceOrientation(.landscapeLeft)
   }
 }

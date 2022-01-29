@@ -27,6 +27,7 @@ struct GameGridSquare: View {
     }
     .background(backgroundColor)
     .aspectRatio(1, contentMode: .fit)
+    .frame(maxWidth: 60)
   }
   
   private var backgroundColor: Color {
