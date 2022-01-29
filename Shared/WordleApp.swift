@@ -9,11 +9,13 @@ import SwiftUI
 
 @main
 struct WordleApp: App {
-  let game = WordleGame()
-
   var body: some Scene {
     WindowGroup {
-      GameView(game: game)
+      if let provider = try? WordProvider() {
+        GameView(game: WordleGame(generator: provider))
+      } else {
+        Text("ERROR: Could not get word provider")
+      }
     }
   }
 }

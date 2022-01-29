@@ -7,25 +7,39 @@
 
 import Foundation
 
-actor WordProvider {
+protocol WordGenerator {
+  func generateWord() -> [Letter]
+}
+
+final class WordProvider: WordGenerator {
   enum Failure: Error {
     case wordFileNotFound
   }
 
   var words = [String]()
 
-  init() async throws {
-    try await retrieveWords()
-  }
-
-  func retrieveWords() async throws {
+  init() throws {
     guard let url = Bundle.main.url(forResource: "words", withExtension: nil) else { throw Failure.wordFileNotFound }
 
-    let (data, _) = try await URLSession.shared.data(from: url)
+    let data = try Data(contentsOf: url)
     words = try JSONDecoder().decode([String].self, from: data)
   }
 
-  func generateWord() -> String {
-    words.randomElement() ?? "hello"
+  func generateWord() -> [Letter] {
+    let wordString = words.randomElement() ?? "hello"
+    return wordString.compactMap { Letter(rawValue: String($0)) }
   }
 }
+
+// MARK: Test Generator
+
+struct TestWordGenerator: WordGenerator {
+  func generateWord() -> [Letter] {
+    [.h, .e, .l, .l, .o]
+  }
+}
+
+extension WordGenerator where Self == TestWordGenerator {
+  static var test: TestWordGenerator { TestWordGenerator() }
+}
+

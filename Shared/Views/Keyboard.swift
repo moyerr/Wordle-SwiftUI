@@ -37,13 +37,8 @@ struct Keyboard: View {
 
 struct Keyboard_Previews: PreviewProvider {
   static var previews: some View {
-    Group {
-      Keyboard(game: WordleGame())
-        .previewInterfaceOrientation(.landscapeLeft)
-      Keyboard(game: WordleGame())
-        .preferredColorScheme(.dark)
-        .previewInterfaceOrientation(.landscapeLeft)
-    }
+    Keyboard(game: WordleGame(generator: .test))
+      .withPreviewTraits()
   }
 }
 

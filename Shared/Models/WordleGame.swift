@@ -11,7 +11,8 @@ final class WordleGame: ObservableObject {
   private static let maxAttempts = 6
   private static let wordLength = 5
 
-  let correctWord: [Letter] = [.c, .r, .a, .c, .k]
+  private let wordGenerator: WordGenerator
+  private var correctWord: [Letter]
 
   @Published private(set) var lettersUsed = [Letter: LetterResult]()
   @Published private(set) var grid = GameGrid(
@@ -21,6 +22,11 @@ final class WordleGame: ObservableObject {
 
   private var round = 0
   private var character = 0
+
+  init(generator: WordGenerator) {
+    self.wordGenerator = generator
+    self.correctWord = generator.generateWord()
+  }
 
   func keyboardDidPress(_ key: Key) {
     switch key {

@@ -26,8 +26,8 @@ struct GameView: View {
 
 struct ContentView_Previews: PreviewProvider {
   static var previews: some View {
-    GameView(game: WordleGame())
+    GameView(game: WordleGame(generator: .test))
       .previewDevice("iPad mini (6th generation)")
-.previewInterfaceOrientation(.landscapeLeft)
+      .previewInterfaceOrientation(.landscapeLeft)
   }
 }
