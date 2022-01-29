@@ -27,9 +27,3 @@ struct ContentView_Previews: PreviewProvider {
       .previewInterfaceOrientation(.landscapeRight)
   }
 }
-
-extension Array where Element == Letter {
-  var word: String {
-    map(\.displayValue).joined()
-  }
-}

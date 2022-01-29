@@ -11,8 +11,6 @@
 		4E59F75127A38A3E0067F4B4 /* GameGridSquare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E59F74F27A38A3E0067F4B4 /* GameGridSquare.swift */; };
 		4E59F75327A38DD00067F4B4 /* GameGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E59F75227A38DD00067F4B4 /* GameGridView.swift */; };
 		4E59F75427A38DD00067F4B4 /* GameGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E59F75227A38DD00067F4B4 /* GameGridView.swift */; };
-		4E59F75627A397260067F4B4 /* Array+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E59F75527A397260067F4B4 /* Array+.swift */; };
-		4E59F75727A397260067F4B4 /* Array+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E59F75527A397260067F4B4 /* Array+.swift */; };
 		4E5BBA8A27A1C67800528660 /* WordleGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E5BBA8927A1C67800528660 /* WordleGame.swift */; };
 		4E5BBA8B27A1C67800528660 /* WordleGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E5BBA8927A1C67800528660 /* WordleGame.swift */; };
 		4E6754B627A4B55B003E4C8E /* GameGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6754B527A4B55B003E4C8E /* GameGrid.swift */; };
@@ -63,7 +61,6 @@
 /* Begin PBXFileReference section */
 		4E59F74F27A38A3E0067F4B4 /* GameGridSquare.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameGridSquare.swift; sourceTree = "<group>"; };
 		4E59F75227A38DD00067F4B4 /* GameGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameGridView.swift; sourceTree = "<group>"; };
-		4E59F75527A397260067F4B4 /* Array+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+.swift"; sourceTree = "<group>"; };
 		4E5BBA8927A1C67800528660 /* WordleGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordleGame.swift; sourceTree = "<group>"; };
 		4E6754B527A4B55B003E4C8E /* GameGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameGrid.swift; sourceTree = "<group>"; };
 		4EE89FF627A236910060CF38 /* GameGridRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameGridRow.swift; sourceTree = "<group>"; };
@@ -211,7 +208,6 @@
 			isa = PBXGroup;
 			children = (
 				4EF8442627A0802200C49028 /* Color+.swift */,
-				4E59F75527A397260067F4B4 /* Array+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -382,7 +378,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4E59F75627A397260067F4B4 /* Array+.swift in Sources */,
 				4EF8442A27A0806C00C49028 /* KeyboardKey.swift in Sources */,
 				4EF8440727A07AF600C49028 /* GameView.swift in Sources */,
 				4E6754B627A4B55B003E4C8E /* GameGrid.swift in Sources */,
@@ -403,7 +398,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4E59F75727A397260067F4B4 /* Array+.swift in Sources */,
 				4EF8442B27A0806C00C49028 /* KeyboardKey.swift in Sources */,
 				4EF8440827A07AF600C49028 /* GameView.swift in Sources */,
 				4E6754B727A4B55B003E4C8E /* GameGrid.swift in Sources */,
