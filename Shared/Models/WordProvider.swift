@@ -26,8 +26,17 @@ final class WordProvider: WordGenerator {
   }
 
   func generateWord() -> [Letter] {
-    let wordString = words.randomElement() ?? "hello"
-    return wordString.compactMap { Letter(rawValue: String($0)) }
+    let calendar = Calendar(identifier: .gregorian)
+
+    guard
+      let startDate = calendar.date(from: DateComponents(year: 2021, month: 6, day: 19)),
+      let elapsedDays = calendar.dateComponents([.day], from: startDate, to: Date()).day,
+      words.indices.contains(elapsedDays)
+    else {
+      return (words.randomElement() ?? "hello").letters
+    }
+
+    return words[elapsedDays].letters
   }
 }
 
@@ -43,3 +52,8 @@ extension WordGenerator where Self == TestWordGenerator {
   static var test: TestWordGenerator { TestWordGenerator() }
 }
 
+private extension String {
+  var letters: [Letter] {
+    compactMap { Letter(rawValue: String($0)) }
+  }
+}
