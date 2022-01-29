@@ -33,11 +33,11 @@ struct GameGridSquare: View {
     switch square.result {
     case nil:
       return Color.clear
-    case .notInWord:
+    case .absent:
       return Color.incorrect
-    case .wrongPositionInWord:
+    case .present:
       return Color.almostCorrect
-    case .correctPositionInWord:
+    case .correct:
       return Color.correct
     }
   }
@@ -45,7 +45,7 @@ struct GameGridSquare: View {
 
 struct GameGridSquare_Previews: PreviewProvider {
   static var previews: some View {
-    GameGridSquare(square: GameSquare(letter: .w, result: .notInWord))
+    GameGridSquare(square: GameSquare(letter: .w, result: .absent))
       .withPreviewTraits(layout: .fixed(width: 150, height: 150))
   }
 }

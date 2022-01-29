@@ -7,15 +7,15 @@
 
 import SwiftUI
 
-enum LetterGuessResult: Comparable, Hashable {
-  case notInWord
-  case wrongPositionInWord
-  case correctPositionInWord
+enum LetterResult: Comparable, Hashable {
+  case absent
+  case present
+  case correct
 }
 
 enum LetterState {
   case unused
-  case used(LetterGuessResult)
+  case used(LetterResult)
 }
 
 struct KeyboardKey: View {
@@ -43,11 +43,11 @@ struct KeyboardKey: View {
       return .secondaryBackground
     case .used(let result):
       switch result {
-      case .notInWord:
+      case .absent:
         return .incorrect
-      case .wrongPositionInWord:
+      case .present:
         return .almostCorrect
-      case .correctPositionInWord:
+      case .correct:
         return .correct
       }
     }

@@ -13,7 +13,7 @@ final class WordleGame: ObservableObject {
 
   let correctWord: [Letter] = [.c, .r, .a, .c, .k]
 
-  @Published private(set) var lettersUsed = [Letter: LetterGuessResult]()
+  @Published private(set) var lettersUsed = [Letter: LetterResult]()
   @Published private(set) var grid = GameGrid(
     width: WordleGame.wordLength,
     height: WordleGame.maxAttempts
@@ -46,9 +46,9 @@ final class WordleGame: ObservableObject {
 
     // Easy path - if they got it, game over
     guard word != correctWord else {
-      word.forEach { lettersUsed[$0] = .correctPositionInWord }
+      word.forEach { lettersUsed[$0] = .correct }
       (0 ..< Self.wordLength).forEach { letter in
-        grid[round, letter].result = .correctPositionInWord
+        grid[round, letter].result = .correct
       }
 
       // TODO: Game over
@@ -59,13 +59,13 @@ final class WordleGame: ObservableObject {
       guard correctWord.indices.contains(index) else { continue }
 
       if correctWord.contains(letter) {
-        let result: LetterGuessResult = (correctWord[index] == letter) ?
-          .correctPositionInWord :
-          .wrongPositionInWord
+        let result: LetterResult = (correctWord[index] == letter) ?
+          .correct :
+          .present
 
         grid[round, index].result = result
       } else {
-        grid[round, index].result = .notInWord
+        grid[round, index].result = .absent
       }
     }
 
@@ -83,7 +83,7 @@ final class WordleGame: ObservableObject {
 
   private func updateLettersUsed() {
     lettersUsed = grid.rows[0 ..< round]
-      .reduce(into: [Letter: LetterGuessResult]()) { partialResult, nextRow in
+      .reduce(into: [Letter: LetterResult]()) { partialResult, nextRow in
         for square in nextRow.squares {
           guard let letter = square.letter, let result = square.result else { continue }
 

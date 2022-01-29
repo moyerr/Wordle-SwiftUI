@@ -42,12 +42,12 @@ struct GameRow: Hashable {
 struct GameSquare: Hashable {
   let position: Int
   var letter: Letter?
-  var result: LetterGuessResult?
+  var result: LetterResult?
 
   init(
     position: Int = 0,
     letter: Letter?,
-    result: LetterGuessResult?
+    result: LetterResult?
   ) {
     self.position = position
     self.letter = letter
