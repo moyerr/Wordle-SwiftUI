@@ -11,6 +11,8 @@ extension Color {
   static var primaryBackground: Color { Color(UIColor.systemBackground) }
   static var secondaryBackground: Color { Color(UIColor.systemGray2) }
 
+  static let primaryButton = Color("primaryButton")
+
   static let emptySquareBorder = Color("emptySquareBorder")
   static let filledSquareBorder = Color("filledSquareBorder")
 

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E573D1227A5EDBB007020D1 /* HelpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E573D1127A5EDBB007020D1 /* HelpView.swift */; };
+		4E573D1327A5EDBB007020D1 /* HelpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E573D1127A5EDBB007020D1 /* HelpView.swift */; };
 		4E59F75027A38A3E0067F4B4 /* GameGridSquare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E59F74F27A38A3E0067F4B4 /* GameGridSquare.swift */; };
 		4E59F75127A38A3E0067F4B4 /* GameGridSquare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E59F74F27A38A3E0067F4B4 /* GameGridSquare.swift */; };
 		4E59F75327A38DD00067F4B4 /* GameGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E59F75227A38DD00067F4B4 /* GameGridView.swift */; };
@@ -67,6 +69,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4E573D1127A5EDBB007020D1 /* HelpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpView.swift; sourceTree = "<group>"; };
 		4E59F74F27A38A3E0067F4B4 /* GameGridSquare.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameGridSquare.swift; sourceTree = "<group>"; };
 		4E59F75227A38DD00067F4B4 /* GameGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameGridView.swift; sourceTree = "<group>"; };
 		4E5BBA8927A1C67800528660 /* WordleGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordleGame.swift; sourceTree = "<group>"; };
@@ -219,6 +222,7 @@
 				4EE89FF627A236910060CF38 /* GameGridRow.swift */,
 				4E59F74F27A38A3E0067F4B4 /* GameGridSquare.swift */,
 				4E59F75227A38DD00067F4B4 /* GameGridView.swift */,
+				4E573D1127A5EDBB007020D1 /* HelpView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -418,6 +422,7 @@
 				4EF8442727A0802200C49028 /* Color+.swift in Sources */,
 				4EF8442427A07FE400C49028 /* PreviewTraits.swift in Sources */,
 				4EF8441F27A07C6500C49028 /* Key.swift in Sources */,
+				4E573D1227A5EDBB007020D1 /* HelpView.swift in Sources */,
 				4E6754C027A4E325003E4C8E /* WordProvider.swift in Sources */,
 				4EF8441A27A07B3800C49028 /* Keyboard.swift in Sources */,
 				4E59F75027A38A3E0067F4B4 /* GameGridSquare.swift in Sources */,
@@ -441,6 +446,7 @@
 				4EF8442827A0802200C49028 /* Color+.swift in Sources */,
 				4EF8442527A07FE400C49028 /* PreviewTraits.swift in Sources */,
 				4EF8442027A07C6500C49028 /* Key.swift in Sources */,
+				4E573D1327A5EDBB007020D1 /* HelpView.swift in Sources */,
 				4E6754C127A4E325003E4C8E /* WordProvider.swift in Sources */,
 				4EF8441B27A07B3800C49028 /* Keyboard.swift in Sources */,
 				4E59F75127A38A3E0067F4B4 /* GameGridSquare.swift in Sources */,
