@@ -29,9 +29,21 @@ struct KeyboardKey: View {
   }
 }
 
-//struct KeyboardKey_Previews: PreviewProvider {
-//  static var previews: some View {
-//    KeyboardKey(key: .letter(.r), state: .unused, action: {})
-//      .withPreviewTraits()
-//  }
-//}
+struct KeyboardKey_Previews: PreviewProvider {
+  static var previews: some View {
+    Group {
+      KeyboardKey(key: .letter(.a), action: {})
+        .keyStyle(.revealedLetter(.absent))
+
+      KeyboardKey(key: .letter(.b), action: {})
+        .keyStyle(.revealedLetter(.present))
+
+      KeyboardKey(key: .letter(.c), action: {})
+        .keyStyle(.revealedLetter(.correct))
+
+      KeyboardKey(key: .letter(.d), action: {})
+    }.withPreviewTraits(
+      layout: .fixed(width: 80, height: 80)
+    )
+  }
+}
