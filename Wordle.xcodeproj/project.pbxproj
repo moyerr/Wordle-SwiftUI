@@ -17,6 +17,8 @@
 		4E6754B727A4B55B003E4C8E /* GameGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6754B527A4B55B003E4C8E /* GameGrid.swift */; };
 		4E6754BD27A4E258003E4C8E /* words in Resources */ = {isa = PBXBuildFile; fileRef = 4E6754BC27A4E258003E4C8E /* words */; };
 		4E6754BE27A4E258003E4C8E /* words in Resources */ = {isa = PBXBuildFile; fileRef = 4E6754BC27A4E258003E4C8E /* words */; };
+		4E6754C027A4E325003E4C8E /* WordProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6754BF27A4E325003E4C8E /* WordProvider.swift */; };
+		4E6754C127A4E325003E4C8E /* WordProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6754BF27A4E325003E4C8E /* WordProvider.swift */; };
 		4EE89FF727A236910060CF38 /* GameGridRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE89FF627A236910060CF38 /* GameGridRow.swift */; };
 		4EE89FF827A236910060CF38 /* GameGridRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE89FF627A236910060CF38 /* GameGridRow.swift */; };
 		4EF843F627A07AF600C49028 /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF843F527A07AF600C49028 /* Tests_iOS.swift */; };
@@ -66,6 +68,7 @@
 		4E5BBA8927A1C67800528660 /* WordleGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordleGame.swift; sourceTree = "<group>"; };
 		4E6754B527A4B55B003E4C8E /* GameGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameGrid.swift; sourceTree = "<group>"; };
 		4E6754BC27A4E258003E4C8E /* words */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = words; sourceTree = "<group>"; };
+		4E6754BF27A4E325003E4C8E /* WordProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordProvider.swift; sourceTree = "<group>"; };
 		4EE89FF627A236910060CF38 /* GameGridRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameGridRow.swift; sourceTree = "<group>"; };
 		4EF843DD27A07AF400C49028 /* WordleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordleApp.swift; sourceTree = "<group>"; };
 		4EF843DE27A07AF400C49028 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
@@ -212,6 +215,7 @@
 				4EF8442C27A097C900C49028 /* Letter.swift */,
 				4E5BBA8927A1C67800528660 /* WordleGame.swift */,
 				4E6754B527A4B55B003E4C8E /* GameGrid.swift */,
+				4E6754BF27A4E325003E4C8E /* WordProvider.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -398,6 +402,7 @@
 				4EF8442727A0802200C49028 /* Color+.swift in Sources */,
 				4EF8442427A07FE400C49028 /* PreviewTraits.swift in Sources */,
 				4EF8441F27A07C6500C49028 /* Key.swift in Sources */,
+				4E6754C027A4E325003E4C8E /* WordProvider.swift in Sources */,
 				4EF8441A27A07B3800C49028 /* Keyboard.swift in Sources */,
 				4E59F75027A38A3E0067F4B4 /* GameGridSquare.swift in Sources */,
 				4E5BBA8A27A1C67800528660 /* WordleGame.swift in Sources */,
@@ -418,6 +423,7 @@
 				4EF8442827A0802200C49028 /* Color+.swift in Sources */,
 				4EF8442527A07FE400C49028 /* PreviewTraits.swift in Sources */,
 				4EF8442027A07C6500C49028 /* Key.swift in Sources */,
+				4E6754C127A4E325003E4C8E /* WordProvider.swift in Sources */,
 				4EF8441B27A07B3800C49028 /* Keyboard.swift in Sources */,
 				4E59F75127A38A3E0067F4B4 /* GameGridSquare.swift in Sources */,
 				4E5BBA8B27A1C67800528660 /* WordleGame.swift in Sources */,
