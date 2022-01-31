@@ -7,21 +7,42 @@
 
 import SwiftUI
 
+enum GameResult: Codable {
+  case won(guesses: Int)
+  case lost
+}
+
+struct GameData: Codable {
+  let result: GameResult
+  let grid: [String]
+  let timestamp: Date
+}
+
+final class GameStatsManager {
+  @Stored(filename: "game-history")
+  private var history = [GameData]()
+
+  func updateHistory(with data: GameData) {
+    history.append(data)
+  }
+}
+
 final class WordleGame: ObservableObject {
   private static let maxAttempts = 6
   private static let wordLength = 5
 
+  private let statManager = GameStatsManager()
   private let wordGenerator: WordGenerator
   private var correctWord: [Letter]
+
+  private var attempt = 0
+  private var character = 0
 
   @Published private(set) var lettersUsed = [Letter: LetterResult]()
   @Published private(set) var grid = GameGrid(
     width: WordleGame.wordLength,
     height: WordleGame.maxAttempts
   )
-
-  private var round = 0
-  private var character = 0
 
   init(generator: WordGenerator) {
     self.wordGenerator = generator
@@ -31,47 +52,46 @@ final class WordleGame: ObservableObject {
   func keyboardDidPress(_ key: Key) {
     switch key {
     case .letter(let letter):
-      guard grid[round].letters.count < WordleGame.wordLength else { return }
+      guard grid[attempt].letters.count < WordleGame.wordLength else { return }
 
-      grid[round, character].letter = letter
+      grid[attempt, character].letter = letter
       character += 1
     case .enter:
-      if grid[round].letters.count == WordleGame.wordLength {
+      if grid[attempt].letters.count == WordleGame.wordLength {
         commitGuess()
       }
     case .delete:
-      if !grid[round].letters.isEmpty {
+      if !grid[attempt].letters.isEmpty {
         character -= 1
-        grid[round, character].letter = nil
+        grid[attempt, character].letter = nil
       }
     }
   }
 
   private func commitGuess() {
-    let word = grid[round].letters
+    let word = grid[attempt].letters
 
     // Easy path - if they got it, game over
     guard word != correctWord else {
       word.forEach { lettersUsed[$0] = .correct }
-      (0 ..< Self.wordLength).forEach { letter in
-        grid[round, letter].result = .correct
+
+      (0 ..< WordleGame.wordLength).forEach { letter in
+        grid[attempt, letter].result = .correct
       }
 
-      // TODO: Game over
+      endGame()
       return
     }
 
     for (index, letter) in word.enumerated() {
       guard correctWord.indices.contains(index) else { continue }
 
-      if correctWord.contains(letter) {
-        let result: LetterResult = (correctWord[index] == letter) ?
-          .correct :
-          .present
-
-        grid[round, index].result = result
+      if correctWord[index] == letter {
+        grid[attempt, index].result = .correct
+      } else if correctWord.contains(letter) {
+        grid[attempt, index].result = .present
       } else {
-        grid[round, index].result = .absent
+        grid[attempt, index].result = .absent
       }
     }
 
@@ -79,26 +99,41 @@ final class WordleGame: ObservableObject {
   }
 
   private func completeRound() {
-    round += 1
-    character = 0
-
     updateLettersUsed()
 
-    // TODO: Check for game over
+    attempt += 1
+    character = 0
+
+    if attempt >= WordleGame.maxAttempts {
+      endGame()
+    }
+  }
+
+  private func endGame() {
+    let gameResult: GameResult = grid[attempt].letters == correctWord ?
+      .won(guesses: attempt) :
+      .lost
+
+    let gameData = GameData(
+      result: gameResult,
+      grid: grid.rawStrings,
+      timestamp: Date()
+    )
+
+    statManager.updateHistory(with: gameData)
   }
 
   private func updateLettersUsed() {
-    lettersUsed = grid.rows[0 ..< round]
-      .reduce(into: [Letter: LetterResult]()) { partialResult, nextRow in
-        for square in nextRow.squares {
-          guard let letter = square.letter, let result = square.result else { continue }
+    let thisRow = grid[attempt]
 
-          if let existingResult = partialResult[letter] {
-            if result > existingResult { partialResult[letter] = result }
-          } else {
-            partialResult[letter] = result
-          }
-        }
+    for square in thisRow.squares {
+      guard let letter = square.letter, let result = square.result else { continue }
+
+      if let existingResult = lettersUsed[letter] {
+        if result > existingResult { lettersUsed[letter] = result }
+      } else {
+        lettersUsed[letter] = result
       }
+    }
   }
 }

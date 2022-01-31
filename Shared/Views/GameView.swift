@@ -19,13 +19,12 @@ struct GameView: View {
         showSettings: .constant(false)
       )
 
-      Rectangle()
-        .fill(Color.emptySquareBorder)
-        .frame(height: 2)
+      HSeparatorLine()
 
       Spacer()
       GameGridView(grid: game.grid)
       Spacer()
+      
       Keyboard(game: game)
     }
     .sheet(isPresented: $showingHelpPage) {

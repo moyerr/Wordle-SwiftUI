@@ -42,15 +42,11 @@ struct HelpView: View {
       )
         .multilineTextAlignment(.leading)
 
-      Rectangle()
-        .fill(Color.emptySquareBorder)
-        .frame(height: 2)
+      HSeparatorLine()
 
       examples
 
-      Rectangle()
-        .fill(Color.emptySquareBorder)
-        .frame(height: 2)
+      HSeparatorLine()
 
       Text("A new WORDLE will be available each day!")
         .bold()
