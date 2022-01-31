@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		4E573D1227A5EDBB007020D1 /* HelpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E573D1127A5EDBB007020D1 /* HelpView.swift */; };
 		4E573D1327A5EDBB007020D1 /* HelpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E573D1127A5EDBB007020D1 /* HelpView.swift */; };
+		4E573D1527A5F82D007020D1 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E573D1427A5F82C007020D1 /* HeaderView.swift */; };
+		4E573D1627A5F82D007020D1 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E573D1427A5F82C007020D1 /* HeaderView.swift */; };
 		4E59F75027A38A3E0067F4B4 /* GameGridSquare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E59F74F27A38A3E0067F4B4 /* GameGridSquare.swift */; };
 		4E59F75127A38A3E0067F4B4 /* GameGridSquare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E59F74F27A38A3E0067F4B4 /* GameGridSquare.swift */; };
 		4E59F75327A38DD00067F4B4 /* GameGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E59F75227A38DD00067F4B4 /* GameGridView.swift */; };
@@ -70,6 +72,7 @@
 
 /* Begin PBXFileReference section */
 		4E573D1127A5EDBB007020D1 /* HelpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpView.swift; sourceTree = "<group>"; };
+		4E573D1427A5F82C007020D1 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		4E59F74F27A38A3E0067F4B4 /* GameGridSquare.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameGridSquare.swift; sourceTree = "<group>"; };
 		4E59F75227A38DD00067F4B4 /* GameGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameGridView.swift; sourceTree = "<group>"; };
 		4E5BBA8927A1C67800528660 /* WordleGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordleGame.swift; sourceTree = "<group>"; };
@@ -223,6 +226,7 @@
 				4E59F74F27A38A3E0067F4B4 /* GameGridSquare.swift */,
 				4E59F75227A38DD00067F4B4 /* GameGridView.swift */,
 				4E573D1127A5EDBB007020D1 /* HelpView.swift */,
+				4E573D1427A5F82C007020D1 /* HeaderView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -417,6 +421,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4EF8442A27A0806C00C49028 /* KeyboardKey.swift in Sources */,
+				4E573D1527A5F82D007020D1 /* HeaderView.swift in Sources */,
 				4EF8440727A07AF600C49028 /* GameView.swift in Sources */,
 				4E6754B627A4B55B003E4C8E /* GameGrid.swift in Sources */,
 				4EF8442727A0802200C49028 /* Color+.swift in Sources */,
@@ -441,6 +446,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4EF8442B27A0806C00C49028 /* KeyboardKey.swift in Sources */,
+				4E573D1627A5F82D007020D1 /* HeaderView.swift in Sources */,
 				4EF8440827A07AF600C49028 /* GameView.swift in Sources */,
 				4E6754B727A4B55B003E4C8E /* GameGrid.swift in Sources */,
 				4EF8442827A0802200C49028 /* Color+.swift in Sources */,
