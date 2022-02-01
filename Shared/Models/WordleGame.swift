@@ -7,36 +7,22 @@
 
 import SwiftUI
 
-enum GameResult: Codable {
-  case won(guesses: Int)
-  case lost
-}
-
-struct GameData: Codable {
-  let result: GameResult
-  let grid: [String]
-  let timestamp: Date
-}
-
-final class GameStatsManager {
-  @Stored(filename: "game-history")
-  private var history = [GameData]()
-
-  func updateHistory(with data: GameData) {
-    history.append(data)
-  }
-}
-
 final class WordleGame: ObservableObject {
   private static let maxAttempts = 6
   private static let wordLength = 5
 
   private let statManager = GameStatsManager()
-  private let wordGenerator: WordGenerator
+  private let wordProvider: WordProviding
   private var correctWord: [Letter]
 
   private var attempt = 0
   private var character = 0
+
+  private var guesses: [String] {
+    grid.rows[0 ..< attempt].map {
+      $0.squares.compactMap(\.letter).string
+    }
+  }
 
   @Published private(set) var lettersUsed = [Letter: LetterResult]()
   @Published private(set) var grid = GameGrid(
@@ -44,9 +30,9 @@ final class WordleGame: ObservableObject {
     height: WordleGame.maxAttempts
   )
 
-  init(generator: WordGenerator) {
-    self.wordGenerator = generator
-    self.correctWord = generator.generateWord()
+  init(provider: WordProviding) {
+    self.wordProvider = provider
+    self.correctWord = provider.generateWord()
   }
 
   func keyboardDidPress(_ key: Key) {
@@ -71,18 +57,6 @@ final class WordleGame: ObservableObject {
   private func commitGuess() {
     let word = grid[attempt].letters
 
-    // Easy path - if they got it, game over
-    guard word != correctWord else {
-      word.forEach { lettersUsed[$0] = .correct }
-
-      (0 ..< WordleGame.wordLength).forEach { letter in
-        grid[attempt, letter].result = .correct
-      }
-
-      endGame()
-      return
-    }
-
     for (index, letter) in word.enumerated() {
       guard correctWord.indices.contains(index) else { continue }
 
@@ -99,24 +73,25 @@ final class WordleGame: ObservableObject {
   }
 
   private func completeRound() {
+    let word = grid[attempt].letters
+
     updateLettersUsed()
 
     attempt += 1
     character = 0
 
-    if attempt >= WordleGame.maxAttempts {
+    if word == correctWord {
+      endGame()
+    } else if attempt >= WordleGame.maxAttempts {
       endGame()
     }
   }
 
   private func endGame() {
-    let gameResult: GameResult = grid[attempt].letters == correctWord ?
-      .won(guesses: attempt) :
-      .lost
-
     let gameData = GameData(
-      result: gameResult,
-      grid: grid.rawStrings,
+      correctWord: correctWord.string,
+      guesses: guesses,
+      lettersUsed: lettersUsed,
       timestamp: Date()
     )
 
@@ -135,5 +110,11 @@ final class WordleGame: ObservableObject {
         lettersUsed[letter] = result
       }
     }
+  }
+}
+
+private extension Array where Element == Letter {
+  var string: String {
+    map(\.rawValue).joined()
   }
 }

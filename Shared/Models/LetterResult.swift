@@ -7,8 +7,21 @@
 
 import Foundation
 
-enum LetterResult: Comparable, Hashable {
+enum LetterResult: String, Comparable, Hashable, Codable {
   case absent
   case present
   case correct
+
+  static func < (lhs: LetterResult, rhs: LetterResult) -> Bool {
+    switch (lhs, rhs) {
+    case (.absent, .present):
+      return true
+    case (.absent, .correct):
+      return true
+    case (.present, .correct):
+      return true
+    default:
+      return false
+    }
+  }
 }

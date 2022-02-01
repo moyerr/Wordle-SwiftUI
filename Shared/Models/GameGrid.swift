@@ -10,14 +10,6 @@ import Foundation
 struct GameGrid {
   var rows: [GameRow]
 
-  var rawStrings: [String] {
-    rows.map {
-      $0.squares
-        .compactMap(\.letter?.rawValue)
-        .joined()
-    }
-  }
-
   init(width: Int, height: Int) {
     rows = (0 ..< height).map {
       GameRow(

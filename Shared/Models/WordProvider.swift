@@ -7,11 +7,11 @@
 
 import Foundation
 
-protocol WordGenerator {
+protocol WordProviding {
   func generateWord() -> [Letter]
 }
 
-final class WordProvider: WordGenerator {
+final class WordProvider: WordProviding {
   enum Failure: Error {
     case wordFileNotFound
   }
@@ -38,18 +38,6 @@ final class WordProvider: WordGenerator {
 
     return words[elapsedDays].letters
   }
-}
-
-// MARK: Test Generator
-
-struct TestWordGenerator: WordGenerator {
-  func generateWord() -> [Letter] {
-    [.h, .e, .l, .l, .o]
-  }
-}
-
-extension WordGenerator where Self == TestWordGenerator {
-  static var test: TestWordGenerator { TestWordGenerator() }
 }
 
 private extension String {

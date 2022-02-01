@@ -12,7 +12,7 @@ struct WordleApp: App {
   var body: some Scene {
     WindowGroup {
       if let provider = try? WordProvider() {
-        GameView(game: WordleGame(generator: provider))
+        GameView(game: WordleGame(provider: provider))
       } else {
         Text("ERROR: Could not get word provider")
       }
