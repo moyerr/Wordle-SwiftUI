@@ -11,7 +11,6 @@ import SwiftUI
 struct GameData: Codable {
   let correctWord: String
   let guesses: [String]
-  let lettersUsed: [Letter: LetterResult]
   let timestamp: Date
 
   var result: GameResult {

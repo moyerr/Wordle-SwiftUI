@@ -18,12 +18,6 @@ final class WordleGame: ObservableObject {
   private var attempt = 0
   private var character = 0
 
-  private var guesses: [String] {
-    grid.rows[0 ..< attempt].map {
-      $0.squares.compactMap(\.letter).string
-    }
-  }
-
   @Published private(set) var lettersUsed = [Letter: LetterResult]()
   @Published private(set) var grid = GameGrid(
     width: WordleGame.wordLength,
@@ -88,10 +82,13 @@ final class WordleGame: ObservableObject {
   }
 
   private func endGame() {
+    let rawGuesses = grid.rows[0 ..< attempt].map {
+      $0.squares.compactMap(\.letter).string
+    }
+
     let gameData = GameData(
       correctWord: correctWord.string,
-      guesses: guesses,
-      lettersUsed: lettersUsed,
+      guesses: rawGuesses,
       timestamp: Date()
     )
 
