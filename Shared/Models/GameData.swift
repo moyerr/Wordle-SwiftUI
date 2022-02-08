@@ -15,7 +15,7 @@ struct GameData: Codable {
 
   var result: GameResult {
     if let finalGuess = guesses.last, finalGuess == correctWord {
-      return .won(guesses: guesses.count)
+      return .won
     } else {
       return .lost
     }

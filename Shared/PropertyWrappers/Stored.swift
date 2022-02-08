@@ -46,7 +46,9 @@ struct Stored<Value> where Value: Codable {
   }
 
   private func load() throws -> Value {
-    return try Value.read(from: url)
+    let value = try Value.read(from: url)
+    print("[Stored] Loaded value from \(url.absoluteString)")
+    return value
   }
 
   private func save(_ newValue: Value) {

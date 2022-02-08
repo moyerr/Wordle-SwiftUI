@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum GameResult: Codable {
-  case won(guesses: Int)
+enum GameResult {
+  case won
   case lost
 }

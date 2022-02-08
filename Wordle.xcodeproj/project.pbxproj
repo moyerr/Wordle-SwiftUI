@@ -27,6 +27,11 @@
 		4E6754C427A59E2E003E4C8E /* LetterResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6754C227A59E2E003E4C8E /* LetterResult.swift */; };
 		4E6754CE27A5B031003E4C8E /* KeyStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6754CD27A5B031003E4C8E /* KeyStyle.swift */; };
 		4E6754CF27A5B031003E4C8E /* KeyStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6754CD27A5B031003E4C8E /* KeyStyle.swift */; };
+		4EB98E4127B20BD500AC73FB /* Sequence+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB98E4027B20BD500AC73FB /* Sequence+.swift */; };
+		4EB98E4227B20BD500AC73FB /* Sequence+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB98E4027B20BD500AC73FB /* Sequence+.swift */; };
+		4EB98E4427B20ED700AC73FB /* Calendar+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB98E4327B20ED700AC73FB /* Calendar+.swift */; };
+		4EB98E4527B20ED700AC73FB /* Calendar+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB98E4327B20ED700AC73FB /* Calendar+.swift */; };
+		4EB98E4727B210EF00AC73FB /* CalendarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB98E4627B210EF00AC73FB /* CalendarTests.swift */; };
 		4ED690D527A87AAC009CFE4D /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED690D427A87AAC009CFE4D /* StatsView.swift */; };
 		4ED690D627A87AAC009CFE4D /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED690D427A87AAC009CFE4D /* StatsView.swift */; };
 		4ED690D827A87E6A009CFE4D /* SeparatorLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED690D727A87E6A009CFE4D /* SeparatorLine.swift */; };
@@ -97,6 +102,9 @@
 		4E6754BF27A4E325003E4C8E /* WordProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordProvider.swift; sourceTree = "<group>"; };
 		4E6754C227A59E2E003E4C8E /* LetterResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterResult.swift; sourceTree = "<group>"; };
 		4E6754CD27A5B031003E4C8E /* KeyStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyStyle.swift; sourceTree = "<group>"; };
+		4EB98E4027B20BD500AC73FB /* Sequence+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sequence+.swift"; sourceTree = "<group>"; };
+		4EB98E4327B20ED700AC73FB /* Calendar+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Calendar+.swift"; sourceTree = "<group>"; };
+		4EB98E4627B210EF00AC73FB /* CalendarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarTests.swift; sourceTree = "<group>"; };
 		4ED690D427A87AAC009CFE4D /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
 		4ED690D727A87E6A009CFE4D /* SeparatorLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparatorLine.swift; sourceTree = "<group>"; };
 		4ED690DA27A89259009CFE4D /* Codable+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Codable+.swift"; sourceTree = "<group>"; };
@@ -244,6 +252,7 @@
 			isa = PBXGroup;
 			children = (
 				4EF843F527A07AF600C49028 /* Tests_iOS.swift */,
+				4EB98E4627B210EF00AC73FB /* CalendarTests.swift */,
 				4EF843F727A07AF600C49028 /* Tests_iOSLaunchTests.swift */,
 			);
 			path = "Tests iOS";
@@ -296,6 +305,8 @@
 			children = (
 				4EF8442627A0802200C49028 /* Color+.swift */,
 				4ED690DA27A89259009CFE4D /* Codable+.swift */,
+				4EB98E4027B20BD500AC73FB /* Sequence+.swift */,
+				4EB98E4327B20ED700AC73FB /* Calendar+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -479,6 +490,7 @@
 				4EF8442427A07FE400C49028 /* PreviewTraits.swift in Sources */,
 				4EF8441F27A07C6500C49028 /* Key.swift in Sources */,
 				4ED690DF27A89753009CFE4D /* Stored.swift in Sources */,
+				4EB98E4427B20ED700AC73FB /* Calendar+.swift in Sources */,
 				4ED690D827A87E6A009CFE4D /* SeparatorLine.swift in Sources */,
 				4E573D1227A5EDBB007020D1 /* HelpView.swift in Sources */,
 				4E6754C027A4E325003E4C8E /* WordProvider.swift in Sources */,
@@ -492,6 +504,7 @@
 				4EE89FF727A236910060CF38 /* GameGridRow.swift in Sources */,
 				4ED690E527A8A55B009CFE4D /* GameResult.swift in Sources */,
 				4EF8442D27A097C900C49028 /* Letter.swift in Sources */,
+				4EB98E4127B20BD500AC73FB /* Sequence+.swift in Sources */,
 				4E6754C327A59E2E003E4C8E /* LetterResult.swift in Sources */,
 				4E6754CE27A5B031003E4C8E /* KeyStyle.swift in Sources */,
 			);
@@ -512,6 +525,7 @@
 				4EF8442527A07FE400C49028 /* PreviewTraits.swift in Sources */,
 				4EF8442027A07C6500C49028 /* Key.swift in Sources */,
 				4ED690E027A89753009CFE4D /* Stored.swift in Sources */,
+				4EB98E4527B20ED700AC73FB /* Calendar+.swift in Sources */,
 				4ED690D927A87E6A009CFE4D /* SeparatorLine.swift in Sources */,
 				4E573D1327A5EDBB007020D1 /* HelpView.swift in Sources */,
 				4E6754C127A4E325003E4C8E /* WordProvider.swift in Sources */,
@@ -525,6 +539,7 @@
 				4EE89FF827A236910060CF38 /* GameGridRow.swift in Sources */,
 				4ED690E627A8A55B009CFE4D /* GameResult.swift in Sources */,
 				4EF8442E27A097C900C49028 /* Letter.swift in Sources */,
+				4EB98E4227B20BD500AC73FB /* Sequence+.swift in Sources */,
 				4E6754C427A59E2E003E4C8E /* LetterResult.swift in Sources */,
 				4E6754CF27A5B031003E4C8E /* KeyStyle.swift in Sources */,
 			);
@@ -535,6 +550,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4EF843F827A07AF600C49028 /* Tests_iOSLaunchTests.swift in Sources */,
+				4EB98E4727B210EF00AC73FB /* CalendarTests.swift in Sources */,
 				4EF843F627A07AF600C49028 /* Tests_iOS.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -796,6 +812,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = UG574BX4XG;
@@ -816,6 +833,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = UG574BX4XG;
