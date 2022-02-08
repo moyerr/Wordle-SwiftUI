@@ -27,11 +27,23 @@
 		4E6754C427A59E2E003E4C8E /* LetterResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6754C227A59E2E003E4C8E /* LetterResult.swift */; };
 		4E6754CE27A5B031003E4C8E /* KeyStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6754CD27A5B031003E4C8E /* KeyStyle.swift */; };
 		4E6754CF27A5B031003E4C8E /* KeyStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6754CD27A5B031003E4C8E /* KeyStyle.swift */; };
+		4E76A2F827B216E6000E1A5E /* UnitTests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E76A2F727B216E6000E1A5E /* UnitTests_iOS.swift */; };
+		4E76A2FE27B216F5000E1A5E /* CalendarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB98E4627B210EF00AC73FB /* CalendarTests.swift */; };
+		4E76A30127B218F5000E1A5E /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = 4E76A30027B218F5000E1A5E /* Algorithms */; };
+		4E76A30327B2A6AB000E1A5E /* Stats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E76A30227B2A6AB000E1A5E /* Stats.swift */; };
+		4E76A30427B2A6AB000E1A5E /* Stats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E76A30227B2A6AB000E1A5E /* Stats.swift */; };
+		4E76A30627B2A6E0000E1A5E /* MockStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E76A30527B2A6E0000E1A5E /* MockStats.swift */; };
+		4E76A30727B2A6E0000E1A5E /* MockStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E76A30527B2A6E0000E1A5E /* MockStats.swift */; };
+		4E76A30A27B2A733000E1A5E /* StatItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E76A30927B2A733000E1A5E /* StatItemView.swift */; };
+		4E76A30B27B2A733000E1A5E /* StatItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E76A30927B2A733000E1A5E /* StatItemView.swift */; };
+		4E76A30D27B2A762000E1A5E /* StatsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E76A30C27B2A762000E1A5E /* StatsHeaderView.swift */; };
+		4E76A30E27B2A762000E1A5E /* StatsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E76A30C27B2A762000E1A5E /* StatsHeaderView.swift */; };
+		4E76A31027B2A797000E1A5E /* StatsFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E76A30F27B2A797000E1A5E /* StatsFooterView.swift */; };
+		4E76A31127B2A797000E1A5E /* StatsFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E76A30F27B2A797000E1A5E /* StatsFooterView.swift */; };
 		4EB98E4127B20BD500AC73FB /* Sequence+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB98E4027B20BD500AC73FB /* Sequence+.swift */; };
 		4EB98E4227B20BD500AC73FB /* Sequence+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB98E4027B20BD500AC73FB /* Sequence+.swift */; };
 		4EB98E4427B20ED700AC73FB /* Calendar+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB98E4327B20ED700AC73FB /* Calendar+.swift */; };
 		4EB98E4527B20ED700AC73FB /* Calendar+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB98E4327B20ED700AC73FB /* Calendar+.swift */; };
-		4EB98E4727B210EF00AC73FB /* CalendarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB98E4627B210EF00AC73FB /* CalendarTests.swift */; };
 		4ED690D527A87AAC009CFE4D /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED690D427A87AAC009CFE4D /* StatsView.swift */; };
 		4ED690D627A87AAC009CFE4D /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED690D427A87AAC009CFE4D /* StatsView.swift */; };
 		4ED690D827A87E6A009CFE4D /* SeparatorLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED690D727A87E6A009CFE4D /* SeparatorLine.swift */; };
@@ -75,6 +87,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		4E76A2F927B216E6000E1A5E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4EF843D827A07AF400C49028 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4EF843E327A07AF600C49028;
+			remoteInfo = "Wordle (iOS)";
+		};
 		4EF843F227A07AF600C49028 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 4EF843D827A07AF400C49028 /* Project object */;
@@ -102,6 +121,13 @@
 		4E6754BF27A4E325003E4C8E /* WordProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordProvider.swift; sourceTree = "<group>"; };
 		4E6754C227A59E2E003E4C8E /* LetterResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterResult.swift; sourceTree = "<group>"; };
 		4E6754CD27A5B031003E4C8E /* KeyStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyStyle.swift; sourceTree = "<group>"; };
+		4E76A2F527B216E6000E1A5E /* UnitTests iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "UnitTests iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E76A2F727B216E6000E1A5E /* UnitTests_iOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitTests_iOS.swift; sourceTree = "<group>"; };
+		4E76A30227B2A6AB000E1A5E /* Stats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stats.swift; sourceTree = "<group>"; };
+		4E76A30527B2A6E0000E1A5E /* MockStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockStats.swift; sourceTree = "<group>"; };
+		4E76A30927B2A733000E1A5E /* StatItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatItemView.swift; sourceTree = "<group>"; };
+		4E76A30C27B2A762000E1A5E /* StatsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsHeaderView.swift; sourceTree = "<group>"; };
+		4E76A30F27B2A797000E1A5E /* StatsFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsFooterView.swift; sourceTree = "<group>"; };
 		4EB98E4027B20BD500AC73FB /* Sequence+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sequence+.swift"; sourceTree = "<group>"; };
 		4EB98E4327B20ED700AC73FB /* Calendar+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Calendar+.swift"; sourceTree = "<group>"; };
 		4EB98E4627B210EF00AC73FB /* CalendarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarTests.swift; sourceTree = "<group>"; };
@@ -135,10 +161,18 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		4E76A2F227B216E6000E1A5E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4EF843E127A07AF600C49028 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E76A30127B218F5000E1A5E /* Algorithms in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -182,6 +216,26 @@
 			path = Styles;
 			sourceTree = "<group>";
 		};
+		4E76A2F627B216E6000E1A5E /* UnitTests iOS */ = {
+			isa = PBXGroup;
+			children = (
+				4E76A2F727B216E6000E1A5E /* UnitTests_iOS.swift */,
+				4EB98E4627B210EF00AC73FB /* CalendarTests.swift */,
+			);
+			path = "UnitTests iOS";
+			sourceTree = "<group>";
+		};
+		4E76A30827B2A715000E1A5E /* Stats */ = {
+			isa = PBXGroup;
+			children = (
+				4ED690D427A87AAC009CFE4D /* StatsView.swift */,
+				4E76A30927B2A733000E1A5E /* StatItemView.swift */,
+				4E76A30C27B2A762000E1A5E /* StatsHeaderView.swift */,
+				4E76A30F27B2A797000E1A5E /* StatsFooterView.swift */,
+			);
+			path = Stats;
+			sourceTree = "<group>";
+		};
 		4ED690DD27A89747009CFE4D /* PropertyWrappers */ = {
 			isa = PBXGroup;
 			children = (
@@ -194,6 +248,7 @@
 			isa = PBXGroup;
 			children = (
 				4ED690E827A8A66D009CFE4D /* MockWordProvider.swift */,
+				4E76A30527B2A6E0000E1A5E /* MockStats.swift */,
 			);
 			path = MockData;
 			sourceTree = "<group>";
@@ -206,6 +261,7 @@
 				4EF843EB27A07AF600C49028 /* macOS */,
 				4EF843F427A07AF600C49028 /* Tests iOS */,
 				4EF8440027A07AF600C49028 /* Tests macOS */,
+				4E76A2F627B216E6000E1A5E /* UnitTests iOS */,
 				4EF843E527A07AF600C49028 /* Products */,
 			);
 			indentWidth = 2;
@@ -236,6 +292,7 @@
 				4EF843EA27A07AF600C49028 /* Wordle.app */,
 				4EF843F127A07AF600C49028 /* Tests iOS.xctest */,
 				4EF843FD27A07AF600C49028 /* Tests macOS.xctest */,
+				4E76A2F527B216E6000E1A5E /* UnitTests iOS.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -252,7 +309,6 @@
 			isa = PBXGroup;
 			children = (
 				4EF843F527A07AF600C49028 /* Tests_iOS.swift */,
-				4EB98E4627B210EF00AC73FB /* CalendarTests.swift */,
 				4EF843F727A07AF600C49028 /* Tests_iOSLaunchTests.swift */,
 			);
 			path = "Tests iOS";
@@ -270,6 +326,7 @@
 		4EF8441C27A07C4C00C49028 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				4E76A30827B2A715000E1A5E /* Stats */,
 				4EF843DE27A07AF400C49028 /* GameView.swift */,
 				4EF8441927A07B3800C49028 /* Keyboard.swift */,
 				4EF8442927A0806C00C49028 /* KeyboardKey.swift */,
@@ -278,7 +335,6 @@
 				4E59F75227A38DD00067F4B4 /* GameGridView.swift */,
 				4E573D1127A5EDBB007020D1 /* HelpView.swift */,
 				4E573D1427A5F82C007020D1 /* HeaderView.swift */,
-				4ED690D427A87AAC009CFE4D /* StatsView.swift */,
 				4ED690D727A87E6A009CFE4D /* SeparatorLine.swift */,
 			);
 			path = Views;
@@ -296,6 +352,7 @@
 				4E5BBA8927A1C67800528660 /* WordleGame.swift */,
 				4E6754BF27A4E325003E4C8E /* WordProvider.swift */,
 				4ED690EB27A8B558009CFE4D /* GameStatsManager.swift */,
+				4E76A30227B2A6AB000E1A5E /* Stats.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -322,6 +379,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		4E76A2F427B216E6000E1A5E /* UnitTests iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4E76A2FD27B216E7000E1A5E /* Build configuration list for PBXNativeTarget "UnitTests iOS" */;
+			buildPhases = (
+				4E76A2F127B216E6000E1A5E /* Sources */,
+				4E76A2F227B216E6000E1A5E /* Frameworks */,
+				4E76A2F327B216E6000E1A5E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4E76A2FA27B216E6000E1A5E /* PBXTargetDependency */,
+			);
+			name = "UnitTests iOS";
+			productName = "UnitTests iOS";
+			productReference = 4E76A2F527B216E6000E1A5E /* UnitTests iOS.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		4EF843E327A07AF600C49028 /* Wordle (iOS) */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4EF8440D27A07AF600C49028 /* Build configuration list for PBXNativeTarget "Wordle (iOS)" */;
@@ -335,6 +410,9 @@
 			dependencies = (
 			);
 			name = "Wordle (iOS)";
+			packageProductDependencies = (
+				4E76A30027B218F5000E1A5E /* Algorithms */,
+			);
 			productName = "Wordle (iOS)";
 			productReference = 4EF843E427A07AF600C49028 /* Wordle.app */;
 			productType = "com.apple.product-type.application";
@@ -402,6 +480,10 @@
 				LastSwiftUpdateCheck = 1320;
 				LastUpgradeCheck = 1320;
 				TargetAttributes = {
+					4E76A2F427B216E6000E1A5E = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = 4EF843E327A07AF600C49028;
+					};
 					4EF843E327A07AF600C49028 = {
 						CreatedOnToolsVersion = 13.2.1;
 					};
@@ -427,6 +509,9 @@
 				Base,
 			);
 			mainGroup = 4EF843D727A07AF400C49028;
+			packageReferences = (
+				4E76A2FF27B218F5000E1A5E /* XCRemoteSwiftPackageReference "swift-algorithms" */,
+			);
 			productRefGroup = 4EF843E527A07AF600C49028 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -435,11 +520,19 @@
 				4EF843E927A07AF600C49028 /* Wordle (macOS) */,
 				4EF843F027A07AF600C49028 /* Tests iOS */,
 				4EF843FC27A07AF600C49028 /* Tests macOS */,
+				4E76A2F427B216E6000E1A5E /* UnitTests iOS */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		4E76A2F327B216E6000E1A5E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4EF843E227A07AF600C49028 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -475,12 +568,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		4E76A2F127B216E6000E1A5E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4E76A2F827B216E6000E1A5E /* UnitTests_iOS.swift in Sources */,
+				4E76A2FE27B216F5000E1A5E /* CalendarTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4EF843E027A07AF600C49028 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				4EF8442A27A0806C00C49028 /* KeyboardKey.swift in Sources */,
+				4E76A30627B2A6E0000E1A5E /* MockStats.swift in Sources */,
 				4E573D1527A5F82D007020D1 /* HeaderView.swift in Sources */,
+				4E76A30D27B2A762000E1A5E /* StatsHeaderView.swift in Sources */,
 				4ED690E927A8A66D009CFE4D /* MockWordProvider.swift in Sources */,
 				4EF8440727A07AF600C49028 /* GameView.swift in Sources */,
 				4ED690E227A8A53D009CFE4D /* GameData.swift in Sources */,
@@ -488,8 +592,11 @@
 				4E6754B627A4B55B003E4C8E /* GameGrid.swift in Sources */,
 				4EF8442727A0802200C49028 /* Color+.swift in Sources */,
 				4EF8442427A07FE400C49028 /* PreviewTraits.swift in Sources */,
+				4E76A31027B2A797000E1A5E /* StatsFooterView.swift in Sources */,
 				4EF8441F27A07C6500C49028 /* Key.swift in Sources */,
+				4E76A30327B2A6AB000E1A5E /* Stats.swift in Sources */,
 				4ED690DF27A89753009CFE4D /* Stored.swift in Sources */,
+				4E76A30A27B2A733000E1A5E /* StatItemView.swift in Sources */,
 				4EB98E4427B20ED700AC73FB /* Calendar+.swift in Sources */,
 				4ED690D827A87E6A009CFE4D /* SeparatorLine.swift in Sources */,
 				4E573D1227A5EDBB007020D1 /* HelpView.swift in Sources */,
@@ -515,7 +622,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				4EF8442B27A0806C00C49028 /* KeyboardKey.swift in Sources */,
+				4E76A30727B2A6E0000E1A5E /* MockStats.swift in Sources */,
 				4E573D1627A5F82D007020D1 /* HeaderView.swift in Sources */,
+				4E76A30E27B2A762000E1A5E /* StatsHeaderView.swift in Sources */,
 				4ED690EA27A8A66D009CFE4D /* MockWordProvider.swift in Sources */,
 				4EF8440827A07AF600C49028 /* GameView.swift in Sources */,
 				4ED690E327A8A53D009CFE4D /* GameData.swift in Sources */,
@@ -523,8 +632,11 @@
 				4E6754B727A4B55B003E4C8E /* GameGrid.swift in Sources */,
 				4EF8442827A0802200C49028 /* Color+.swift in Sources */,
 				4EF8442527A07FE400C49028 /* PreviewTraits.swift in Sources */,
+				4E76A31127B2A797000E1A5E /* StatsFooterView.swift in Sources */,
 				4EF8442027A07C6500C49028 /* Key.swift in Sources */,
+				4E76A30427B2A6AB000E1A5E /* Stats.swift in Sources */,
 				4ED690E027A89753009CFE4D /* Stored.swift in Sources */,
+				4E76A30B27B2A733000E1A5E /* StatItemView.swift in Sources */,
 				4EB98E4527B20ED700AC73FB /* Calendar+.swift in Sources */,
 				4ED690D927A87E6A009CFE4D /* SeparatorLine.swift in Sources */,
 				4E573D1327A5EDBB007020D1 /* HelpView.swift in Sources */,
@@ -550,7 +662,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4EF843F827A07AF600C49028 /* Tests_iOSLaunchTests.swift in Sources */,
-				4EB98E4727B210EF00AC73FB /* CalendarTests.swift in Sources */,
 				4EF843F627A07AF600C49028 /* Tests_iOS.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -567,6 +678,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		4E76A2FA27B216E6000E1A5E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4EF843E327A07AF600C49028 /* Wordle (iOS) */;
+			targetProxy = 4E76A2F927B216E6000E1A5E /* PBXContainerItemProxy */;
+		};
 		4EF843F327A07AF600C49028 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 4EF843E327A07AF600C49028 /* Wordle (iOS) */;
@@ -580,6 +696,47 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		4E76A2FB27B216E6000E1A5E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UG574BX4XG;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rojomo.apps.Wordle.UnitTests-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Wordle.app/Wordle";
+			};
+			name = Debug;
+		};
+		4E76A2FC27B216E6000E1A5E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UG574BX4XG;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rojomo.apps.Wordle.UnitTests-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Wordle.app/Wordle";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 		4EF8440B27A07AF600C49028 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -892,6 +1049,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		4E76A2FD27B216E7000E1A5E /* Build configuration list for PBXNativeTarget "UnitTests iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4E76A2FB27B216E6000E1A5E /* Debug */,
+				4E76A2FC27B216E6000E1A5E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		4EF843DB27A07AF400C49028 /* Build configuration list for PBXProject "Wordle" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -938,6 +1104,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4E76A2FF27B218F5000E1A5E /* XCRemoteSwiftPackageReference "swift-algorithms" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-algorithms.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.2.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4E76A30027B218F5000E1A5E /* Algorithms */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4E76A2FF27B218F5000E1A5E /* XCRemoteSwiftPackageReference "swift-algorithms" */;
+			productName = Algorithms;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4EF843D827A07AF400C49028 /* Project object */;
 }

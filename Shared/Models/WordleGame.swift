@@ -11,7 +11,7 @@ final class WordleGame: ObservableObject {
   private static let maxAttempts = 6
   private static let wordLength = 5
 
-  private let statManager = GameStatsManager()
+  let statManager = GameStatsManager()
   private let wordProvider: WordProviding
   private var correctWord: [Letter]
 

@@ -9,13 +9,15 @@ import SwiftUI
 
 struct GameView: View {
   @ObservedObject var game: WordleGame
+
   @State private var showingHelpPage = false
+  @State private var showingStatsPage = false
 
   var body: some View {
     VStack {
       HeaderView(
         showHelp: $showingHelpPage,
-        showStats: .constant(false),
+        showStats: $showingStatsPage,
         showSettings: .constant(false)
       )
 
@@ -29,6 +31,9 @@ struct GameView: View {
     }
     .sheet(isPresented: $showingHelpPage) {
       HelpView(isShowing: $showingHelpPage)
+    }
+    .sheet(isPresented: $showingStatsPage) {
+      StatsView(isShowing: $showingStatsPage, stats: game.statManager.stats)
     }
   }
 }
