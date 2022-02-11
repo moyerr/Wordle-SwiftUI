@@ -16,12 +16,26 @@ final class GameStatsManager {
     history.stats
   }
 
+  var guessDistribution: [Int: Int] {
+    history.guessDistribution
+  }
+
   func updateHistory(with data: GameData) {
     history.append(data)
   }
 }
 
 extension Array where Element == GameData {
+  var guessDistribution: [Int: Int] {
+    map(\.guesses)
+      .reduce(
+        into: [1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0]
+      ) { partialResult, guesses in
+        let currentCount = partialResult[guesses.count] ?? 0
+        partialResult[guesses.count] = currentCount + 1
+      }
+  }
+
   var stats: Stats {
     let gamesPlayed = count
 

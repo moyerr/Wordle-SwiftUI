@@ -8,9 +8,13 @@
 import Foundation
 
 extension Encodable {
-  func write(to url: URL, using encoder: AnyEncoder = JSONEncoder()) throws {
+  func write(
+    to url: URL,
+    using encoder: AnyEncoder = JSONEncoder(),
+    options: Data.WritingOptions = [.atomic]
+  ) throws {
     let data = try encoder.encode(self)
-    try data.write(to: url, options: .atomic)
+    try data.write(to: url, options: options)
   }
 }
 

@@ -33,7 +33,11 @@ struct GameView: View {
       HelpView(isShowing: $showingHelpPage)
     }
     .sheet(isPresented: $showingStatsPage) {
-      StatsView(isShowing: $showingStatsPage, stats: game.statManager.stats)
+      StatsView(
+        isShowing: $showingStatsPage,
+        stats: game.statManager.stats,
+        guessDistribution: game.statManager.guessDistribution
+      )
     }
   }
 }
