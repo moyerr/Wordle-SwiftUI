@@ -10,7 +10,7 @@ import Foundation
 extension Encodable {
   func write(
     to url: URL,
-    using encoder: AnyEncoder = JSONEncoder(),
+    using encoder: DataEncoder = JSONEncoder(),
     options: Data.WritingOptions = [.atomic]
   ) throws {
     let data = try encoder.encode(self)
@@ -19,22 +19,22 @@ extension Encodable {
 }
 
 extension Decodable {
-  static func read(from url: URL, using decoder: AnyDecoder = JSONDecoder()) throws -> Self {
+  static func read(from url: URL, using decoder: DataDecoder = JSONDecoder()) throws -> Self {
     let data = try Data(contentsOf: url)
     return try decoder.decode(Self.self, from: data)
   }
 }
 
-protocol AnyDecoder {
+protocol DataDecoder {
   func decode<T: Decodable>(_ type: T.Type, from data: Data) throws -> T
 }
 
-protocol AnyEncoder {
+protocol DataEncoder {
   func encode<T: Encodable>(_ value: T) throws -> Data
 }
 
-extension JSONDecoder: AnyDecoder {}
-extension PropertyListDecoder: AnyDecoder {}
+extension JSONDecoder: DataDecoder {}
+extension PropertyListDecoder: DataDecoder {}
 
-extension JSONEncoder: AnyEncoder {}
-extension PropertyListEncoder: AnyEncoder {}
+extension JSONEncoder: DataEncoder {}
+extension PropertyListEncoder: DataEncoder {}

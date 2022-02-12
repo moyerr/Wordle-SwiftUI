@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct Keyboard: View {
-  @ObservedObject var game: WordleGame
+  @EnvironmentObject var game: WordleGame
 
   private let horizontalSpacing: CGFloat = 4
 
@@ -37,7 +37,8 @@ struct Keyboard: View {
 
 struct Keyboard_Previews: PreviewProvider {
   static var previews: some View {
-    Keyboard(game: WordleGame(provider: .mock))
+    Keyboard()
+      .environmentObject(WordleGame(provider: .mock))
       .withPreviewTraits()
   }
 }
