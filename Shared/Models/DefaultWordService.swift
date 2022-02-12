@@ -1,5 +1,5 @@
 //
-//  WordProvider.swift
+//  WordService.swift
 //  Wordle
 //
 //  Created by Robert Moyer on 1/28/22.
@@ -7,22 +7,20 @@
 
 import Foundation
 
-protocol WordProviding {
+protocol WordService {
+  func isWordValid(_ word: [Letter]) -> Bool
   func generateWord() -> [Letter]
 }
 
-final class WordProvider: WordProviding {
-  enum Failure: Error {
-    case wordFileNotFound
-  }
+final class DefaultWordService: WordService {
+  @Bundled(filename: "words")
+  private var words: [String]
 
-  var words = [String]()
+  @Bundled(filename: "valid_guesses")
+  private var validGuesses: Set<String>
 
-  init() throws {
-    guard let url = Bundle.main.url(forResource: "words", withExtension: nil) else { throw Failure.wordFileNotFound }
-
-    let data = try Data(contentsOf: url)
-    words = try JSONDecoder().decode([String].self, from: data)
+  func isWordValid(_ word: [Letter]) -> Bool {
+    validGuesses.contains(word.string)
   }
 
   func generateWord() -> [Letter] {

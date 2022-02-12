@@ -9,14 +9,12 @@ import SwiftUI
 
 @main
 struct WordleApp: App {
+  @StateObject private var game = WordleGame(wordService: DefaultWordService())
+  
   var body: some Scene {
     WindowGroup {
-      if let provider = try? WordProvider() {
-        GameView()
-          .environmentObject(WordleGame(provider: provider))
-      } else {
-        Text("ERROR: Could not get word provider")
-      }
+      GameView()
+        .environmentObject(game)
     }
   }
 }

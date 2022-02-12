@@ -12,7 +12,7 @@ final class WordleGame: ObservableObject {
   private static let wordLength = 5
 
   let statManager = GameStatsManager()
-  private let wordProvider: WordProviding
+  private let wordService: WordService
   private var correctWord: [Letter]
 
   private var attempt = 0
@@ -24,9 +24,9 @@ final class WordleGame: ObservableObject {
     height: WordleGame.maxAttempts
   )
 
-  init(provider: WordProviding) {
-    self.wordProvider = provider
-    self.correctWord = provider.generateWord()
+  init(wordService: WordService) {
+    self.wordService = wordService
+    self.correctWord = wordService.generateWord()
   }
 
   func keyboardDidPress(_ key: Key) {
@@ -37,9 +37,12 @@ final class WordleGame: ObservableObject {
       grid[attempt, character].letter = letter
       character += 1
     case .enter:
-      if grid[attempt].letters.count == WordleGame.wordLength {
+      guard
+        grid[attempt].letters.count == WordleGame.wordLength,
+        wordService.isWordValid(grid[attempt].letters)
+      else { return }
+
         commitGuess()
-      }
     case .delete:
       if !grid[attempt].letters.isEmpty {
         character -= 1
@@ -110,7 +113,7 @@ final class WordleGame: ObservableObject {
   }
 }
 
-private extension Array where Element == Letter {
+extension Array where Element == Letter {
   var string: String {
     map(\.rawValue).joined()
   }

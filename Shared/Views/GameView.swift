@@ -45,7 +45,7 @@ struct GameView: View {
 struct ContentView_Previews: PreviewProvider {
   static var previews: some View {
     GameView()
-      .environmentObject(WordleGame(provider: .mock))
+      .environmentObject(WordleGame(wordService: .mock))
       .previewDevice("iPad mini (6th generation)")
       .previewInterfaceOrientation(.portraitUpsideDown)
   }

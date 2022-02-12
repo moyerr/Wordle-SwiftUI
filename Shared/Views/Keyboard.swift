@@ -38,7 +38,7 @@ struct Keyboard: View {
 struct Keyboard_Previews: PreviewProvider {
   static var previews: some View {
     Keyboard()
-      .environmentObject(WordleGame(provider: .mock))
+      .environmentObject(WordleGame(wordService: .mock))
       .withPreviewTraits()
   }
 }
