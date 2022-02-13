@@ -9,8 +9,8 @@ import SwiftUI
 
 struct StatsView: View {
   @Binding var isShowing: Bool
+
   let stats: Stats
-  let guessDistribution: [Int: Int]
 
   var body: some View {
     NavigationView {
@@ -20,7 +20,7 @@ struct StatsView: View {
 
           Text("GUESS DISTRIBUTION").bold()
 
-          GuessBarGraphView(guessDistribution: guessDistribution)
+          GuessBarGraphView(guessDistribution: stats.guessDistribution)
 
           StatsFooterView()
         }.padding()
@@ -44,15 +44,7 @@ struct StatsView_Previews: PreviewProvider {
   static var previews: some View {
     StatsView(
       isShowing: .constant(true),
-      stats: .mock,
-      guessDistribution: [
-        1: 0,
-        2: 1,
-        3: 4,
-        4: 6,
-        5: 6,
-        6: 2
-      ]
+      stats: .mock
     )
       .withPreviewTraits(layout: .device)
   }

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E0CDB0427B95C8900C7D1CC /* Array+Stats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0CDB0327B95C8900C7D1CC /* Array+Stats.swift */; };
+		4E0CDB0527B95C8900C7D1CC /* Array+Stats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0CDB0327B95C8900C7D1CC /* Array+Stats.swift */; };
 		4E15DCC527B8095E00F48DFC /* valid_guesses in Resources */ = {isa = PBXBuildFile; fileRef = 4E15DCC427B8095E00F48DFC /* valid_guesses */; };
 		4E15DCC627B8095E00F48DFC /* valid_guesses in Resources */ = {isa = PBXBuildFile; fileRef = 4E15DCC427B8095E00F48DFC /* valid_guesses */; };
 		4E15DCC827B854E100F48DFC /* Bundled.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E15DCC727B854E000F48DFC /* Bundled.swift */; };
@@ -67,8 +69,6 @@
 		4ED690E627A8A55B009CFE4D /* GameResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED690E427A8A55B009CFE4D /* GameResult.swift */; };
 		4ED690E927A8A66D009CFE4D /* MockWordService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED690E827A8A66D009CFE4D /* MockWordService.swift */; };
 		4ED690EA27A8A66D009CFE4D /* MockWordService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED690E827A8A66D009CFE4D /* MockWordService.swift */; };
-		4ED690EC27A8B558009CFE4D /* GameStatsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED690EB27A8B558009CFE4D /* GameStatsManager.swift */; };
-		4ED690ED27A8B558009CFE4D /* GameStatsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED690EB27A8B558009CFE4D /* GameStatsManager.swift */; };
 		4EE89FF727A236910060CF38 /* GameGridRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE89FF627A236910060CF38 /* GameGridRow.swift */; };
 		4EE89FF827A236910060CF38 /* GameGridRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE89FF627A236910060CF38 /* GameGridRow.swift */; };
 		4EF843F627A07AF600C49028 /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF843F527A07AF600C49028 /* Tests_iOS.swift */; };
@@ -120,6 +120,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4E0CDB0327B95C8900C7D1CC /* Array+Stats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Stats.swift"; sourceTree = "<group>"; };
 		4E15DCC427B8095E00F48DFC /* valid_guesses */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = valid_guesses; sourceTree = "<group>"; };
 		4E15DCC727B854E000F48DFC /* Bundled.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bundled.swift; sourceTree = "<group>"; };
 		4E2B1DA327B2E638003D8262 /* GuessBarGraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessBarGraphView.swift; sourceTree = "<group>"; };
@@ -151,7 +152,6 @@
 		4ED690E127A8A53D009CFE4D /* GameData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameData.swift; sourceTree = "<group>"; };
 		4ED690E427A8A55B009CFE4D /* GameResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameResult.swift; sourceTree = "<group>"; };
 		4ED690E827A8A66D009CFE4D /* MockWordService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockWordService.swift; sourceTree = "<group>"; };
-		4ED690EB27A8B558009CFE4D /* GameStatsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStatsManager.swift; sourceTree = "<group>"; };
 		4EE89FF627A236910060CF38 /* GameGridRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameGridRow.swift; sourceTree = "<group>"; };
 		4EF843DD27A07AF400C49028 /* WordleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordleApp.swift; sourceTree = "<group>"; };
 		4EF843DE27A07AF400C49028 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
@@ -366,7 +366,6 @@
 				4E6754C227A59E2E003E4C8E /* LetterResult.swift */,
 				4E5BBA8927A1C67800528660 /* WordleGame.swift */,
 				4E6754BF27A4E325003E4C8E /* DefaultWordService.swift */,
-				4ED690EB27A8B558009CFE4D /* GameStatsManager.swift */,
 				4E76A30227B2A6AB000E1A5E /* Stats.swift */,
 				4E6B3C9727B9530D001BDCA4 /* GameManager.swift */,
 			);
@@ -381,6 +380,7 @@
 				4EB98E4027B20BD500AC73FB /* Sequence+.swift */,
 				4EB98E4327B20ED700AC73FB /* Calendar+.swift */,
 				4E76A31227B2AEBD000E1A5E /* StringInterpolation+.swift */,
+				4E0CDB0327B95C8900C7D1CC /* Array+Stats.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -495,7 +495,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1320;
-				LastUpgradeCheck = 1320;
+				LastUpgradeCheck = 1330;
 				TargetAttributes = {
 					4E76A2F427B216E6000E1A5E = {
 						CreatedOnToolsVersion = 13.2.1;
@@ -624,9 +624,9 @@
 				4E573D1227A5EDBB007020D1 /* HelpView.swift in Sources */,
 				4E6754C027A4E325003E4C8E /* DefaultWordService.swift in Sources */,
 				4EF8441A27A07B3800C49028 /* Keyboard.swift in Sources */,
+				4E0CDB0427B95C8900C7D1CC /* Array+Stats.swift in Sources */,
 				4E59F75027A38A3E0067F4B4 /* GameGridSquare.swift in Sources */,
 				4E5BBA8A27A1C67800528660 /* WordleGame.swift in Sources */,
-				4ED690EC27A8B558009CFE4D /* GameStatsManager.swift in Sources */,
 				4EF8440527A07AF600C49028 /* WordleApp.swift in Sources */,
 				4E59F75327A38DD00067F4B4 /* GameGridView.swift in Sources */,
 				4ED690D527A87AAC009CFE4D /* StatsView.swift in Sources */,
@@ -668,9 +668,9 @@
 				4E573D1327A5EDBB007020D1 /* HelpView.swift in Sources */,
 				4E6754C127A4E325003E4C8E /* DefaultWordService.swift in Sources */,
 				4EF8441B27A07B3800C49028 /* Keyboard.swift in Sources */,
+				4E0CDB0527B95C8900C7D1CC /* Array+Stats.swift in Sources */,
 				4E59F75127A38A3E0067F4B4 /* GameGridSquare.swift in Sources */,
 				4E5BBA8B27A1C67800528660 /* WordleGame.swift in Sources */,
-				4ED690ED27A8B558009CFE4D /* GameStatsManager.swift in Sources */,
 				4EF8440627A07AF600C49028 /* WordleApp.swift in Sources */,
 				4E59F75427A38DD00067F4B4 /* GameGridView.swift in Sources */,
 				4ED690D627A87AAC009CFE4D /* StatsView.swift in Sources */,
@@ -941,6 +941,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -969,6 +970,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;

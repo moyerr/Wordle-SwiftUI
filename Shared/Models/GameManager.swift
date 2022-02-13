@@ -8,10 +8,12 @@
 import Combine
 
 final class GameManager: ObservableObject {
-
+  @Stored(filename: "game-history")
+  private var history = [GameData]()
+  
   @Published var game: WordleGame
+  var stats: Stats { history.stats }
 
-  let statManager = GameStatsManager()
   let wordService: WordService
 
   private var cancellables = Set<AnyCancellable>()
@@ -21,10 +23,14 @@ final class GameManager: ObservableObject {
     self.game = WordleGame(wordService: wordService)
   }
 
+  func updateHistory(with data: GameData) {
+    history.append(data)
+  }
+
   private func listenForChanges() {
     $game
       .compactMap(\.completedGameData)
-      .sink(receiveValue: statManager.updateHistory(with:))
+      .sink(receiveValue: updateHistory(with:))
       .store(in: &cancellables)
   }
 }

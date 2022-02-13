@@ -35,8 +35,7 @@ struct GameView: View {
     .sheet(isPresented: $showingStatsPage) {
       StatsView(
         isShowing: $showingStatsPage,
-        stats: gameManager.statManager.stats,
-        guessDistribution: gameManager.statManager.guessDistribution
+        stats: gameManager.stats
       )
     }
   }

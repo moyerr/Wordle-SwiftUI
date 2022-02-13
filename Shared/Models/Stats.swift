@@ -12,4 +12,5 @@ struct Stats {
   let winPercent: Double
   let currentStreak: Int
   let longestStreak: Int
+  let guessDistribution: [Int: Int]
 }
