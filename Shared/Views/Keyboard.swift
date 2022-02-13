@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct Keyboard: View {
-  @EnvironmentObject var game: WordleGame
+  @Binding var game: WordleGame
 
   private let horizontalSpacing: CGFloat = 4
 
@@ -22,7 +22,7 @@ struct Keyboard: View {
             }
 
             if case let .letter(letter) = key,
-                let result = game.lettersUsed[letter] {
+               let result = game.lettersUsed[letter] {
               keyView
                 .keyStyle(.revealedLetter(result))
             } else {
@@ -37,8 +37,7 @@ struct Keyboard: View {
 
 struct Keyboard_Previews: PreviewProvider {
   static var previews: some View {
-    Keyboard()
-      .environmentObject(WordleGame(wordService: .mock))
+    Keyboard(game: .constant(WordleGame(wordService: .mock)))
       .withPreviewTraits()
   }
 }

@@ -9,12 +9,12 @@ import SwiftUI
 
 @main
 struct WordleApp: App {
-  @StateObject private var game = WordleGame(wordService: DefaultWordService())
+  @StateObject private var gameManager = GameManager(wordService: DefaultWordService())
   
   var body: some Scene {
     WindowGroup {
       GameView()
-        .environmentObject(game)
+        .environmentObject(gameManager)
     }
   }
 }

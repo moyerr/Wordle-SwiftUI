@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct GameView: View {
-  @EnvironmentObject var game: WordleGame
+  @EnvironmentObject var gameManager: GameManager
 
   @State private var showingHelpPage = false
   @State private var showingStatsPage = false
@@ -24,10 +24,10 @@ struct GameView: View {
       HSeparatorLine()
 
       Spacer()
-      GameGridView(grid: game.grid)
+      GameGridView(grid: gameManager.game.grid)
       Spacer()
       
-      Keyboard()
+      Keyboard(game: $gameManager.game)
     }
     .sheet(isPresented: $showingHelpPage) {
       HelpView(isShowing: $showingHelpPage)
@@ -35,8 +35,8 @@ struct GameView: View {
     .sheet(isPresented: $showingStatsPage) {
       StatsView(
         isShowing: $showingStatsPage,
-        stats: game.statManager.stats,
-        guessDistribution: game.statManager.guessDistribution
+        stats: gameManager.statManager.stats,
+        guessDistribution: gameManager.statManager.guessDistribution
       )
     }
   }
@@ -45,7 +45,7 @@ struct GameView: View {
 struct ContentView_Previews: PreviewProvider {
   static var previews: some View {
     GameView()
-      .environmentObject(WordleGame(wordService: .mock))
+      .environmentObject(GameManager(wordService: .mock))
       .previewDevice("iPad mini (6th generation)")
       .previewInterfaceOrientation(.portraitUpsideDown)
   }

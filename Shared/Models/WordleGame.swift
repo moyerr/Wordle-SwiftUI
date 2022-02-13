@@ -5,21 +5,21 @@
 //  Created by Robert Moyer on 1/26/22.
 //
 
-import SwiftUI
+import Foundation
 
-final class WordleGame: ObservableObject {
+struct WordleGame {
   private static let maxAttempts = 6
   private static let wordLength = 5
 
-  let statManager = GameStatsManager()
   private let wordService: WordService
-  private var correctWord: [Letter]
 
+  private var correctWord: [Letter]
   private var attempt = 0
   private var character = 0
 
-  @Published private(set) var lettersUsed = [Letter: LetterResult]()
-  @Published private(set) var grid = GameGrid(
+  private(set) var completedGameData: GameData? = nil
+  private(set) var lettersUsed = [Letter: LetterResult]()
+  private(set) var grid = GameGrid(
     width: WordleGame.wordLength,
     height: WordleGame.maxAttempts
   )
@@ -29,7 +29,9 @@ final class WordleGame: ObservableObject {
     self.correctWord = wordService.generateWord()
   }
 
-  func keyboardDidPress(_ key: Key) {
+  mutating func keyboardDidPress(_ key: Key) {
+    guard completedGameData == nil else { return }
+    
     switch key {
     case .letter(let letter):
       guard grid[attempt].letters.count < WordleGame.wordLength else { return }
@@ -51,7 +53,7 @@ final class WordleGame: ObservableObject {
     }
   }
 
-  private func commitGuess() {
+  private mutating func commitGuess() {
     let word = grid[attempt].letters
 
     for (index, letter) in word.enumerated() {
@@ -69,7 +71,7 @@ final class WordleGame: ObservableObject {
     completeRound()
   }
 
-  private func completeRound() {
+  private mutating func completeRound() {
     let word = grid[attempt].letters
 
     updateLettersUsed()
@@ -84,21 +86,19 @@ final class WordleGame: ObservableObject {
     }
   }
 
-  private func endGame() {
+  private mutating func endGame() {
     let rawGuesses = grid.rows[0 ..< attempt].map {
       $0.squares.compactMap(\.letter).string
     }
 
-    let gameData = GameData(
+    completedGameData = GameData(
       correctWord: correctWord.string,
       guesses: rawGuesses,
       timestamp: Date()
     )
-
-    statManager.updateHistory(with: gameData)
   }
 
-  private func updateLettersUsed() {
+  private mutating func updateLettersUsed() {
     let thisRow = grid[attempt]
 
     for square in thisRow.squares {
