@@ -8,12 +8,14 @@
 import SwiftUI
 
 struct StatsFooterView: View {
+  @EnvironmentObject var gameManager: GameManager
+
   var body: some View {
     HStack(spacing: 20) {
       VStack {
         Text("NEXT WORDLE")
           .font(.callout.bold())
-        Text("06:14:53")
+        Text("\(format: gameManager.timeRemaining)")
           .font(.system(size: 24).monospacedDigit())
       }.frame(minWidth: 0, maxWidth: .infinity)
       VSeparatorLine()

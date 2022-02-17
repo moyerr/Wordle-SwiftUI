@@ -8,6 +8,15 @@
 import Foundation
 
 extension Calendar {
+  static var gregorian: Calendar {
+    Calendar(identifier: .gregorian)
+  }
+
+  var startOfTomorrow: Date {
+    let tomorrow = date(byAdding: .day, value: 1, to: Date())!
+    return startOfDay(for: tomorrow)
+  }
+
   func isDate(_ end: Date, inDayAfter start: Date) -> Bool {
       numberOfDays(from: start, to: end) == 1
   }
